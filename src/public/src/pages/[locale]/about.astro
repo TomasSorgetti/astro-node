@@ -1,0 +1,15 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { loadTranslations } from '../../i18n/utils/i18n';
+
+const { locale } = Astro.params;
+
+const translations = await loadTranslations(locale);
+---
+
+<Layout locale={locale} title={translations.title}>
+  <main>
+    <h1>{translations.about}</h1>
+    <p>{translations.welcome}</p>
+  </main>
+</Layout>

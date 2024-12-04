@@ -1,0 +1,16 @@
+---
+import ChangeLanguage from "../ChangeLanguage.astro";
+
+const { locale } = Astro.params;
+
+---
+
+<nav>
+  <ul>
+    <li><a href={`/${locale}/`}>Home</a></li>
+    <li><a href={`/${locale}/about`}>About</a></li>
+    <li>
+      <ChangeLanguage />
+    </li>
+  </ul>
+</nav>

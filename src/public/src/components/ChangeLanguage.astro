@@ -1,0 +1,17 @@
+<div>
+  <button id="change-lang-en" data-lang="en">English</button>
+  <button id="change-lang-es" data-lang="es">Español</button>
+</div>
+
+<script is:inline>
+  document.querySelectorAll("[id^='change-lang']").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const selectedLanguage = event.target.dataset.lang;
+
+      document.cookie = `app-lang=${selectedLanguage}; path=/; max-age=31536000`;
+
+      const currentPath = window.location.pathname.split("/").slice(2).join("/");
+      window.location.href = `/${selectedLanguage}/${currentPath}`;
+    });
+  });
+</script>

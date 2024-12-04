@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+const locale = Astro.params?.locale || 'en';
+
+const translations = {
+  en: { title: 'Page Not Found', message: 'Sorry, this page does not exist.' },
+  es: { title: 'Página No Encontrada', message: 'Lo sentimos, esta página no existe.' },
+};
+
+const { title, message } = translations[locale] || translations['en'];
+---
+
+<Layout title={title} locale={locale}>
+    <main>
+        <h1>{title}</h1>
+        <p>{message}</p>
+    </main>
+</Layout>
