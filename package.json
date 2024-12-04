@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon server.js",
-    "build": "cd src/public && astro build"
+    "start": "vercel dev",
+    "deploy": "vercel --prod"
   },
   "keywords": [],
   "author": "",
